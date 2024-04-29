@@ -10,41 +10,28 @@ Defesa: <l <= 10 && l > 0>
 
 int main(){
     //Dicionário de Dados
-    int l;
-    int i = 0;
-    int i_aux = 0;
-    int j = 0;
+    int linhas, aux_linhas = 0;
 
-    
-    //Entrada de Dados
-    printf("Digite a quantidade de linhas: ");
-    scanf("%d",&l);
-    i_aux = l;
+    printf("Insira a Qtd de Linhas: ");
+    scanf(" %d",&linhas);
 
-    //Defesa
-    if (l > 10 || l < 0){
-        printf("Quantidade inválida de linhas.");
-
-        return 1;
+    //Defese
+    while(linhas > 10){
+        printf("Insira um valor válido: ");
+        scanf(" %d",&linhas);
     }
-    
+
     //Corpo
-    if(l == 1){
-        printf("* \n");
+    while(aux_linhas < linhas){
+        int aux_l = linhas;
+        while (aux_l > aux_linhas){
+            printf("*");
+            aux_l--;
+        }
+        printf("\n");
+        
+        aux_linhas++;
     }
-
-    while (i <= l){
-       printf("\n");
-       while (j < i_aux)
-       {
-        printf("*");
-        j++;
-       }
-       i_aux--;
-       i++;
-       j = 0;
-    }
-    
 
     return 0;
 }
